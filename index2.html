@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tarjeta MiUT</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
+    <link rel="stylesheet" href="geo.css">
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  />
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #ffffff;
+            padding-top: 70px;
+            margin: 0;
+        }
+
+        .navbar {
+            background-color: #01a986;
+        }
+
+        .section {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .titulo-principal,
+        .section-title {
+            color: #01a986;
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+            transition: color 0.5s;
+        }
+
+        .section-title {
+            margin-top: 5rem;
+            padding-bottom: 10rem;
+        }
+
+        .section-title-2 {
+            color: #ffffff;
+            margin-top: 5rem;
+            padding-bottom: 10rem;
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-family: "Arial Black", sans-serif;
+            transition: color 0.5s;
+        }
+
+        .titulo-principal:hover,
+        .section-title:hover {
+            color: #007a63;
+        }
+
+        .section-title-2:hover {
+            color: #dbdbdb;
+        }
+
+        .container {
+            max-width: 1300px;
+            height: 100%;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .content-text {
+            flex: 1;
+        }
+
+        .content-text p {
+            font-size: 20px;
+            line-height: 1.5;
+        }
+
+        .content-image {
+            flex: 1;
+            text-align: center;
+            transition: transform 0.5s;
+        }
+
+        .content-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+
+        .section-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+        }
+
+        .section-content-text {
+            font-size: 25px;
+            text-align: left;
+            font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana,
+                sans-serif;
+        }
+
+        .section-content-image {
+            text-align: center;
+            transition: transform 0.5s;
+        }
+
+        .section-content-image img {
+            max-width: 600px;
+            height: auto;
+        }
+
+        .section-content-image:hover {
+            transform: scale(1.05);
+        }
+
+        .content-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .content-flex.reverse {
+            flex-direction: row-reverse;
+        }
+    </style>
+</head>
+
+<body data-spy="scroll" data-target="#navbar" data-offset="30">
+    <nav id="navbar" class="navbar navbar-expand-sm navbar-dark fixed-top">
+        <a class="navbar-brand" href="#about">Inicio</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#acquisition">Adquisición</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#recharge">Recarga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#consultation">Consulta en Línea</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#security">Seguridad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#conocenos">Conocenos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ubicacion">Ubicacion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="about" class="section">
+        <div class="container">
+            <h1 class="titulo-principal" style="font-size: 6rem;">
+                Bienvenido a Tarjeta MiUT
+            </h1>
+            <div class="section-content">
+                <div class="section-content-text">
+                    <p>
+                        La Tarjeta MiUT es una solución de pago moderna y conveniente para el servicio de transporte
+                        universitario. Con esta tarjeta, los estudiantes pueden acceder fácilmente al transporte en el
+                        campus sin la necesidad de llevar efectivo o boletos físicos.
+                    </p>
+                </div>
+                <div class="section-content-image">
+                    <img src="IMG/tarjeta.png" alt="Imagen1" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="acquisition" class="section" style="background-color: #01a986; color: #ffffff">
+        <div class="container">
+            <h2 class="section-title-2">Adquisición de Tarjeta MiUT</h2>
+            <div class="section-content">
+                <div class="section-content-image">
+                    <img src="IMG/tarifa.png" alt="Imagen2" style="width: 300px; height: 300px" />
+                </div>
+                <div class="section-content-text">
+                    <p>
+                        Para obtener la Tarjeta MiUT, visita la oficina de tesorería de la universidad, presenta tu
+                        matrícula y paga una tarifa de adquisición de 30 pesos. ¡Es así de simple!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="recharge" class="section" style="background-color: #b28a44; color: #ffffff">
+        <div class="container">
+            <h2 class="section-title-2">Recarga de Fondos</h2>
+            <div class="section-content">
+                <div class="section-content-text">
+                    <p>
+                        Recarga fondos en tu Tarjeta MiUT en la oficina de tesorería o en los puntos de recarga
+                        designados en todo el campus. ¡Nunca te quedes sin saldo para tu viaje!
+                    </p>
+                </div>
+                <div class="section-content-image">
+                    <img src="IMG/tesoreria.png" alt="Imagen3" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="consultation" class="section">
+        <div class="container">
+            <h2 class="section-title">Consulta tu Saldo en Línea</h2>
+            <div class="section-content">
+                <div class="section-content-image">
+                    <img src="IMG/saldo.png" alt="Imagen4" style="height: 300px;" />
+                </div>
+                <div class="section-content-text">
+                    <p>
+                        Verifica tu saldo y revisa los movimientos realizados con tu Tarjeta MiUT a través de nuestra
+                        página web dedicada. Mantén un registro detallado de tus transacciones de transporte.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="security" style="background-color: #121212; color: #ececec" class="section">
+        <div class="container">
+            <h2 class="section-title" style="color: #ececec">
+                Seguridad y Privacidad
+            </h2>
+            <div class="section-content">
+                <div class="section-content-text">
+                    <p>
+                        Nos tomamos muy en serio la seguridad de tus datos. Nuestra plataforma garantiza la protección de
+                        tu información personal y financiera en todo momento.
+                    </p>
+                </div>
+                <div class="section-content-image">
+                    <img src="IMG/seguridad.png" alt="Imagen5" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="conocenos" class="section" >
+        <div class="container">
+    <div class="overlay"></div>
+    <div class="container mt-5">
+      <h1 style="text-transform: uppercase">Nuestra Comunidad</h1>
+      <h3>Conocenos!</h3>
+      <div class="videos-container" id="videos"></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="scriptyt.js"></script>
+</div>
+
+</div>
+    <div id="ubicacion" class="section" style="background-color: #01a986; color: #ffffff">
+        <div class="container">
+            <h2 class="section-title-2">Ubicacion</h2>
+                <div class="section-content">
+                <div id="map" ></div>
+            <script src="Geo.json"></script>
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+            </div>
+        </div>
+    </div>
+</div>     
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
